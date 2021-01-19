@@ -15,7 +15,7 @@ The goal of this project is as follows:
 
 This is what the page looks like after it is finished: 
 
-![After Image](./assets/....jpg)
+![After Image](./assets/scheduleAfter.jpg)
 
 Github repository: https://github.com/jimnguyen220/dayPlanner
 

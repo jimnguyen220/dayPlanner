@@ -5,8 +5,8 @@ insertDate.text(moment().format('LL'));
 
 //daily planner code here
 
-var btnNine = document.getElementById("btnNine");
-var saveBtn = document.querySelector(".saveBtn");
+// var btnNine = document.getElementById("btnNine");
+var saveBtn = document.getElementsByClassName("saveBtn");
 var nineEl = document.querySelector("#nine");
 var tenEl = document.querySelector("#ten");
 var elevenEl = document.querySelector("#eleven");
@@ -18,6 +18,45 @@ var fourEl = document.querySelector("#four");
 var fiveEl = document.querySelector("#five");
 
 
+//tried getting this code to work because it is cleaner, but unable to update object on local storage 
+// var plannerContent = {
+//     nineContent: nineEl.value,
+//     tenContent: tenEl.value,
+//     elevenContent: elevenEl.value,
+//     twelveContent: twelveEl.value,
+//     oneContent: oneEl.value,
+//     twoContent: twoEl.value,
+//     threeContent: threeEl.value,
+//     fourContent: fourEl.value,
+//     fiveContent: fiveEl.value
+// };
+
+// btnNine.addEventListener("click", function(event) {
+//     event.preventDefault();
+//     localStorage.setItem("plannerContent", JSON.stringify(plannerContent));
+//     renderObjectContent ();
+// });
+
+// renderObjectContent();
+
+// function renderObjectContent() {
+//     var lastObjectContent = JSON.parse(localStorage.getItem("plannerContent"));
+//     if (lastObjectContent == null) {
+//         return
+//     }
+// }
+
+renderContent();
+buttonListener();
+
+function buttonListener() {
+    for (i = 0; saveBtn.length; i++) {
+        saveBtn[i].addEventListener("click", setItem);
+    }
+};
+
+
+//longhanded local storage code, it works, but it's messy
 function renderContent () {
     var nineText = localStorage.getItem("nineText");
     var tenText = localStorage.getItem("tenText");
@@ -28,6 +67,10 @@ function renderContent () {
     var threeText = localStorage.getItem("threeText");
     var fourText = localStorage.getItem("fourText");
     var fiveText = localStorage.getItem("fiveText");
+
+    if (nineText === null || tenText === null || elevenText === null || twelveText === null || oneText === null || twoText === null || threeText === null || fourText === null || fiveText === null) {
+        return
+    }
 
     nineEl.setAttribute("value", nineText);
     tenEl.setAttribute("value", tenText);
@@ -41,17 +84,7 @@ function renderContent () {
 
 }
 
-renderContent();
-
-// btnNine.addEventListener("click", function() {
-//     var nineText = document.getElementById("nine").value;
-//     localStorage.setItem("nineText", nineText);
-//     var tenText = document.getElementById("ten").value;
-//     localStorage.setItem("tenText", tenText);
-
-// });
-
-saveBtn.addEventListener("click", function() {
+function setItem() {
     var nineText = document.getElementById("nine").value;
     var tenText = document.getElementById("ten").value;
     var elevenText = document.getElementById("eleven").value;
@@ -71,7 +104,9 @@ saveBtn.addEventListener("click", function() {
     localStorage.setItem("threeText", threeText);
     localStorage.setItem("fourText", fourText);
     localStorage.setItem("fiveText", fiveText);
-});
+};
+
+// ///////////////////////////////////////////////////////////////////////////////
 
 
 
@@ -133,35 +168,3 @@ saveBtn.addEventListener("click", function() {
 //         currentText.addClass("past");
 //     }
 // }
-
-
-
-
-
-
-// var nineEl = document.getElementsByName("nine");
-// var btnNine = document.getElementById("btnNine");
-
-// function saveLastContent() {
-//     var scheduleContent = {
-//         nineText: nineEl.value,
-//         // tenText = tenEl.value,
-//     }
-//     localStorage.setItem("scheduleContent", JSON.stringify(scheduleContent));
-// };
-
-// function renderLastContent (){
-
-//     // var lastContent = JSON.parse(localstorage.getItem("scheduleContent"));
-//     var lastContent = JSON.parse(localStorage.getItem("scheduleContent"));
-//     if (lastContent !== null) {
-//         document.getElementsByName("nine") = scheduleContent.nineText;
-//     } else{
-//         return;
-//     }
-// }
-// btnNine.addEventListener("click", function(event){
-//     event.preventDefault();
-//     saveLastContent();
-//     renderLastContent ()
-// })

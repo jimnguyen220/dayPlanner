@@ -17,6 +17,8 @@ This is what the page looks like after it is finished:
 
 ![After Image](./assets/scheduleAfter.jpg)
 
+The page will change colors during a typical work day, otherwise, the text fields will be white.
+
 Github repository: https://github.com/jimnguyen220/dayPlanner
 
 Live website: https://jimnguyen220.github.io/dayPlanner/

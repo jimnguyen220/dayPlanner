@@ -18,7 +18,9 @@ This is what the page looks like after it is finished:
 ![After Image](./assets/schedulerAfter.jpg)
 
 Throughout the day, each hour block will update as displayed above.  Gray represents previous hours, red is the current hour and green represents future hours.  The time is updated with momentjs and can be manipulated on javascript.js on line 20.  
-If you would like to test the page, you can pass {hour:XX} as a parameter inside moment() with 'XX' representing the hour in military time to simulate what hour you want.
+
+If you would like to test the page, you can pass {hour:XX} as a parameter inside moment() with 'XX' representing the hour in military time.
+
 As noted above, each time slot is saved to the local storage so the information is still there if the page is refreshed.  You can click on any save button to update the information on the local storage.
 
 Github repository: https://github.com/jimnguyen220/dayPlanner

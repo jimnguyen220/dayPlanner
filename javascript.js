@@ -4,153 +4,133 @@ var insertDate = $("#currentDay")
 insertDate.text(moment().format('LL'));
 
 
-// var btnNine = document.getElementById("btnNine");
-var saveBtn = document.getElementsByClassName("saveBtn");
-var nineEl = document.querySelector("#nine");
-var tenEl = document.querySelector("#ten");
-var elevenEl = document.querySelector("#eleven");
-var twelveEl = document.querySelector("#twelve");
-var oneEl = document.querySelector("#one");
-var twoEl = document.querySelector("#two");
-var threeEl = document.querySelector("#three");
-var fourEl = document.querySelector("#four");
-var fiveEl = document.querySelector("#five");
+var nineEl = $(".nine");
+var tenEl = $(".ten");
+var elevenEl = $(".eleven");
+var twelveEl = $(".twelve");
+var oneEl = $(".one");
+var twoEl = $(".two");
+var threeEl = $(".three");
+var fourEl = $(".four");;
+var fiveEl = $(".five");
 
 //timer code
 var currentText = $(".form-control");
 var currentTime = $(".time");
-var t = new Date().getHours();
+var t = moment().format('HH'); 
+//to update time insert '{hour:XX}' inside moment() with 'XX' representing hour in military time to simulate what hour you want
+
 
 if (t < 9 || t < 10) {
-    nineEl.setAttribute("class", "form-control present");
-    tenEl.setAttribute("class", "form-control future");
-    elevenEl.setAttribute("class", "form-control future");
-    twelveEl.setAttribute("class", "form-control future");
-    oneEl.setAttribute("class", "form-control future");
-    twoEl.setAttribute("class", "form-control future");
-    threeEl.setAttribute("class", "form-control future");
-    fourEl.setAttribute("class", "form-control future");
-    fiveEl.setAttribute("class", "form-control future");
+    nineEl.addClass("present");
+    tenEl.addClass("future");
+    elevenEl.addClass("future");
+    twelveEl.addClass("future");
+    oneEl.addClass("future");
+    twoEl.addClass("future");
+    threeEl.addClass("future");
+    fourEl.addClass("future");
+    fiveEl.addClass("future");
 } else if (t < 10 || t < 11) {
-    nineEl.setAttribute("class", "form-control past");
-    tenEl.setAttribute("class", "form-control present");
-    elevenEl.setAttribute("class", "form-control future");
-    twelveEl.setAttribute("class", "form-control future");
-    oneEl.setAttribute("class", "form-control future");
-    twoEl.setAttribute("class", "form-control future");
-    threeEl.setAttribute("class", "form-control future");
-    fourEl.setAttribute("class", "form-control future");
-    fiveEl.setAttribute("class", "form-control future");
+    nineEl.addClass("past");
+    tenEl.addClass("present");
+    elevenEl.addClass("future");
+    twelveEl.addClass("future");
+    oneEl.addClass("future");
+    twoEl.addClass("future");
+    threeEl.addClass("future");
+    fourEl.addClass("future");
+    fiveEl.addClass("future");
 } else if (t < 11 || t < 12) {
-    nineEl.setAttribute("class", "form-control past");
-    tenEl.setAttribute("class", "form-control past");
-    elevenEl.setAttribute("class", "form-control present");
-    twelveEl.setAttribute("class", "form-control future");
-    oneEl.setAttribute("class", "form-control future");
-    twoEl.setAttribute("class", "form-control future");
-    threeEl.setAttribute("class", "form-control future");
-    fourEl.setAttribute("class", "form-control future");
-    fiveEl.setAttribute("class", "form-control future");
+    nineEl.addClass("past");
+    tenEl.addClass("past");
+    elevenEl.addClass("present");
+    twelveEl.addClass("future");
+    oneEl.addClass("future");
+    twoEl.addClass("future");
+    threeEl.addClass("future");
+    fourEl.addClass("future");
+    fiveEl.addClass("future");
 } else if (t < 12 || t < 13) {
-    nineEl.setAttribute("class", "form-control past");
-    tenEl.setAttribute("class", "form-control past");
-    elevenEl.setAttribute("class", "form-control past");
-    twelveEl.setAttribute("class", "form-control present");
-    oneEl.setAttribute("class", "form-control future");
-    twoEl.setAttribute("class", "form-control future");
-    threeEl.setAttribute("class", "form-control future");
-    fourEl.setAttribute("class", "form-control future");
-    fiveEl.setAttribute("class", "form-control future");
+    nineEl.addClass("past");
+    tenEl.addClass("past");
+    elevenEl.addClass("past");
+    twelveEl.addClass("present");
+    oneEl.addClass("future");
+    twoEl.addClass("future");
+    threeEl.addClass("future");
+    fourEl.addClass("future");
+    fiveEl.addClass("future");
 } else if (t < 13 || t < 14) {
-    nineEl.setAttribute("class", "form-control past");
-    tenEl.setAttribute("class", "form-control past");
-    elevenEl.setAttribute("class", "form-control past");
-    twelveEl.setAttribute("class", "form-control past");
-    oneEl.setAttribute("class", "form-control present");
-    twoEl.setAttribute("class", "form-control future");
-    threeEl.setAttribute("class", "form-control future");
-    fourEl.setAttribute("class", "form-control future");
-    fiveEl.setAttribute("class", "form-control future");
-} else if (t < 14 || t < 14) {
-    nineEl.setAttribute("class", "form-control past");
-    tenEl.setAttribute("class", "form-control past");
-    elevenEl.setAttribute("class", "form-control past");
-    twelveEl.setAttribute("class", "form-control past");
-    oneEl.setAttribute("class", "form-control past");
-    twoEl.setAttribute("class", "form-control present");
-    threeEl.setAttribute("class", "form-control future");
-    fourEl.setAttribute("class", "form-control future");
-    fiveEl.setAttribute("class", "form-control future");
+    nineEl.addClass("past");
+    tenEl.addClass("past");
+    elevenEl.addClass("past");
+    twelveEl.addClass("past");
+    oneEl.addClass("present");
+    twoEl.addClass("future");
+    threeEl.addClass("future");
+    fourEl.addClass("future");
+    fiveEl.addClass("future");
 } else if (t < 14 || t < 15) {
-    tenEl.setAttribute("class", "form-control past");
-    elevenEl.setAttribute("class", "form-control past");
-    twelveEl.setAttribute("class", "form-control past");
-    oneEl.setAttribute("class", "form-control past");
-    twoEl.setAttribute("class", "form-control past");
-    threeEl.setAttribute("class", "form-control present");
-    fourEl.setAttribute("class", "form-control future");
-    fiveEl.setAttribute("class", "form-control future");
+    nineEl.addClass("past");
+    tenEl.addClass("past");
+    elevenEl.addClass("past");
+    twelveEl.addClass("past");
+    oneEl.addClass("past");
+    twoEl.addClass("present");
+    threeEl.addClass("future");
+    fourEl.addClass("future");
+    fiveEl.addClass("future");
 } else if (t < 15 || t < 16) {
-    tenEl.setAttribute("class", "form-control past");
-    elevenEl.setAttribute("class", "form-control past");
-    twelveEl.setAttribute("class", "form-control past");
-    oneEl.setAttribute("class", "form-control past");
-    twoEl.setAttribute("class", "form-control past");
-    threeEl.setAttribute("class", "form-control past");
-    fourEl.setAttribute("class", "form-control present");
-    fiveEl.setAttribute("class", "form-control future");
+    nineEl.addClass("past");
+    tenEl.addClass("past");
+    elevenEl.addClass("past");
+    twelveEl.addClass("past");
+    oneEl.addClass("past");
+    twoEl.addClass("past");
+    threeEl.addClass("present");
+    fourEl.addClass("future");
+    fiveEl.addClass("future");
 } else if (t < 16 || t < 17) {
-    tenEl.setAttribute("class", "form-control past");
-    elevenEl.setAttribute("class", "form-control past");
-    twelveEl.setAttribute("class", "form-control past");
-    oneEl.setAttribute("class", "form-control past");
-    twoEl.setAttribute("class", "form-control past");
-    threeEl.setAttribute("class", "form-control past");
-    fourEl.setAttribute("class", "form-control past");
-    fiveEl.setAttribute("class", "form-control present");
+    nineEl.addClass("past");
+    tenEl.addClass("past");
+    elevenEl.addClass("past");
+    twelveEl.addClass("past");
+    oneEl.addClass("past");
+    twoEl.addClass("past");
+    threeEl.addClass("past");
+    fourEl.addClass("present");
+    fiveEl.addClass("future");
+} else if (t < 17 || t < 18) {
+    nineEl.addClass("past");
+    tenEl.addClass("past");
+    elevenEl.addClass("past");
+    twelveEl.addClass("past");
+    oneEl.addClass("past");
+    twoEl.addClass("past");
+    threeEl.addClass("past");
+    fourEl.addClass("past");
+    fiveEl.addClass("present");
 } else {
-
+    nineEl.addClass("future");
+    tenEl.addClass("future");
+    elevenEl.addClass("future");
+    twelveEl.addClass("future");
+    oneEl.addClass("future");
+    twoEl.addClass("future");
+    threeEl.addClass("future");
+    fourEl.addClass("future");
+    fiveEl.addClass("future");
 }
 
-//tried getting this code to work because it is cleaner, but unable to update object on local storage 
-// var plannerContent = {
-//     nineContent: nineEl.value,
-//     tenContent: tenEl.value,
-//     elevenContent: elevenEl.value,
-//     twelveContent: twelveEl.value,
-//     oneContent: oneEl.value,
-//     twoContent: twoEl.value,
-//     threeContent: threeEl.value,
-//     fourContent: fourEl.value,
-//     fiveContent: fiveEl.value
-// };
-
-// btnNine.addEventListener("click", function(event) {
-//     event.preventDefault();
-//     localStorage.setItem("plannerContent", JSON.stringify(plannerContent));
-//     renderObjectContent ();
-// });
-
-// renderObjectContent();
-
-// function renderObjectContent() {
-//     var lastObjectContent = JSON.parse(localStorage.getItem("plannerContent"));
-//     if (lastObjectContent == null) {
-//         return
-//     }
-// }
-
 renderContent();
-buttonListener();
-
-function buttonListener() {
-    for (i = 0; saveBtn.length; i++) {
-        saveBtn[i].addEventListener("click", setItem);
-    }
-};
 
 
-//longhanded local storage code, it works, but it's messy
+
+
+
+
+
 function renderContent () {
     var nineText = localStorage.getItem("nineText");
     var tenText = localStorage.getItem("tenText");
@@ -166,28 +146,28 @@ function renderContent () {
         return
     }
 
-    nineEl.setAttribute("value", nineText);
-    tenEl.setAttribute("value", tenText);
-    elevenEl.setAttribute("value", elevenText);
-    twelveEl.setAttribute("value", twelveText);
-    oneEl.setAttribute("value", oneText);
-    twoEl.setAttribute("value", twoText);
-    threeEl.setAttribute("value", threeText);
-    fourEl.setAttribute("value", fourText);
-    fiveEl.setAttribute("value", fiveText);
+    nineEl.attr("value", nineText);
+    tenEl.attr("value", tenText);
+    elevenEl.attr("value", elevenText);
+    twelveEl.attr("value", twelveText);
+    oneEl.attr("value", oneText);
+    twoEl.attr("value", twoText);
+    threeEl.attr("value", threeText);
+    fourEl.attr("value", fourText);
+    fiveEl.attr("value", fiveText);
 
 }
 
 function setItem() {
-    var nineText = document.getElementById("nine").value;
-    var tenText = document.getElementById("ten").value;
-    var elevenText = document.getElementById("eleven").value;
-    var twelveText = document.getElementById("twelve").value;
-    var oneText = document.getElementById("one").value;
-    var twoText = document.getElementById("two").value;
-    var threeText = document.getElementById("three").value;
-    var fourText = document.getElementById("four").value;
-    var fiveText = document.getElementById("five").value;
+    var nineText = document.getElementById("nine-text").value;
+    var tenText = document.getElementById("ten-text").value;
+    var elevenText = document.getElementById("eleven-text").value;
+    var twelveText = document.getElementById("twelve-text").value;
+    var oneText = document.getElementById("one-text").value;
+    var twoText = document.getElementById("two-text").value;
+    var threeText = document.getElementById("three-text").value;
+    var fourText = document.getElementById("four-text").value;
+    var fiveText = document.getElementById("five-text").value;
 
     localStorage.setItem("nineText", nineText);
     localStorage.setItem("tenText", tenText);
@@ -200,4 +180,4 @@ function setItem() {
     localStorage.setItem("fiveText", fiveText);
 };
 
-// ///////////////////////////////////////////////////////////////////////////////
+$(".saveBtn").on('click', setItem);

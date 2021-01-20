@@ -21,7 +21,17 @@ var t = moment().format('HH');
 //to update time insert '{hour:XX}' inside moment() with 'XX' representing hour in military time to simulate what hour you want
 
 
-if (t < 9 || t < 10) {
+if (t < 9) {
+    nineEl.addClass("future");
+    tenEl.addClass("future");
+    elevenEl.addClass("future");
+    twelveEl.addClass("future");
+    oneEl.addClass("future");
+    twoEl.addClass("future");
+    threeEl.addClass("future");
+    fourEl.addClass("future");
+    fiveEl.addClass("future");
+} else if (t < 9 || t < 10) {
     nineEl.addClass("present");
     tenEl.addClass("future");
     elevenEl.addClass("future");

@@ -111,7 +111,18 @@ if (t < 9 || t < 10) {
     threeEl.addClass("past");
     fourEl.addClass("past");
     fiveEl.addClass("present");
-} else {
+} else if (t < 18 || t <= 23) {
+    nineEl.addClass("past");
+    tenEl.addClass("past");
+    elevenEl.addClass("past");
+    twelveEl.addClass("past");
+    oneEl.addClass("past");
+    twoEl.addClass("past");
+    threeEl.addClass("past");
+    fourEl.addClass("past");
+    fiveEl.addClass("past");
+} 
+else {
     nineEl.addClass("future");
     tenEl.addClass("future");
     elevenEl.addClass("future");

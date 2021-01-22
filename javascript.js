@@ -1,7 +1,7 @@
 //inserts current date
 var insertDate = $("#currentDay")
 
-insertDate.text(moment().format('LL'));
+insertDate.text(moment().format('dddd, MMMM Do YYYY, h:mm a'));
 
 
 var nineEl = $(".nine");
@@ -17,8 +17,9 @@ var fiveEl = $(".five");
 //timer code
 var currentText = $(".form-control");
 var currentTime = $(".time");
-var t = moment().format('HH'); 
+
 //to update time insert '{hour:XX}' inside moment() with 'XX' representing hour in military time to simulate what hour you want
+var t = moment().format('HH'); 
 
 
 if (t < 9) {
